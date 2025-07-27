@@ -11,7 +11,8 @@ app.use(cors());
 // Middleware
 app.use(cors());
 app.use(express.json());
-app.use('/media', express.static(path.resolve('C:/Users/mzira/Desktop/projet fin d\'etude/photo et video')));
+// Sert les fichiers statiques depuis le dossier /media
+app.use('/media', express.static(path.join(__dirname, 'media')));
 
 console.log('Static media route active');
 const spectacleRoutes = require('./routes/spectacles');
